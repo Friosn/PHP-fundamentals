@@ -110,7 +110,7 @@ echo 'PHP_INT_MIN :   ' . PHP_INT_MIN . '<br/>';
 
 //We shouldn't compare directly float numbers, propably getting errors
 
-//Never compare 2 INF numbers; instead you can do -> is_finite()  ; same if you get NaN -> is_nan()
+//Never compare 2 INF numbers; instead you can do -> is_finite()  ; same if you get NaN -> is_nan() ; is_null()
 
 
 //    STRING   -> super similar to JS, we can access the different letters of a string with the index, we can even alter the letters
@@ -131,7 +131,7 @@ TEXT;
 
 echo nl2br($text);
 
-// Nowdoc
+// Nowdoc -> here you can't have variables
 echo '<br/>';
 
 $text2 = <<<'TEXT'
@@ -141,6 +141,81 @@ Line 3
 TEXT;
 
 echo nl2br($text2);
+
+//           NULL -> we can have it assigned to a variable; or 
+
+echo '<br/>';
+//----------------------------------------------------------------------------
+
+//        ARRAYs         -> key-values; the index is like the key of the content, PHP, JS, Python and Java in this case
+
+$firstArray = ['PHP', 'JavaScript', 'Python', 'Java'];
+
+
+var_dump($firstArray);
+//We can also change the values of our keys
+
+//you can also get JUST the number of elements in the array: 
+
+echo count($firstArray); // 4
+
+echo '<pre>';
+print_r($firstArray);
+echo '</pre>'; // like that we get a fancy print of the array
+/* 
+Array
+(
+    [0] => PHP
+    [1] => JavaScript
+    [2] => Python
+    [3] => Java
+) */
+
+echo '<br/>';
+// We can also add elements to the array, as many as we want with the array_push($var, 'e1', 'e2', ...) method
+$firstArray[] = 'C#'; //this pushes one to the end of the array
+
+
+echo count($firstArray); // 4
+
+echo '<pre>';
+print_r($firstArray);
+echo '</pre>'; 
+
+//We can also make this values the keys and add some other information as the values; for example:
+ $secondArray = [
+  'PHP' => '8.0', 
+  'JavaScript'=> 'E06', 
+  'Python' => 'No clue', 
+  'Java' => 'Whatever'
+ ];
+
+echo '<pre>';
+print_r($secondArray);
+echo '</pre>'; 
+//this can get way more complex, we can have nested arrays (multidimensional arrays)
+// this can get super tricky, you can also assign just o one key a different number, 50 for example, the next index is gonna be 51 even if is at positiion 2
+
+// with array_pop() and array_shift() we substract the last and the first element of the array respectively (as in JS); that would re-index the keys
+
+// with  unset($arr[2])  we destroy the element with index 2 of the array, if we don't specify a key, it will destroy the full array; we can also remove multiple elements; there is no re-index here
+
+
+// we can also cast arrays; for example:
+
+    $varArr = 5;
+
+    var_dump((array) $varArr);
+
+
+
+
+
+
+
+
+
+
 
 
 //  If the entire code is php, we don't need to close the tag ? > (together without space in the middle)
