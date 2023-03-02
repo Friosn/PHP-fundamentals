@@ -63,7 +63,7 @@ Other way of getting the type AND also the data is with --> var_dump()
 */
 
 
-//FUNCTIONS
+//    FUNCTIONS
  //same as JS; we can also specify the type of data of the variables or parameters in a similar way than typescript
 function sum($a, $b) {
     return $a + $b;
@@ -80,7 +80,7 @@ echo 'SUBSTRACT:   ' . sub(2, 2) . '<br/>';
 
 //but we can restrict the data types with  -> declare(strict_types=1)
 
-//CONDITIONAL -> work the same way
+//   CONDITIONAL -> work the same way
 
 /* if (condition) {
     # code...
@@ -89,18 +89,58 @@ echo 'SUBSTRACT:   ' . sub(2, 2) . '<br/>';
     # code...
     echo whatever error
 } */
-echo 'PHP_INT_MAX :   ' . PHP_INT_MAX . '<br/>';
-echo 'PHP_INT_MIN :   ' . PHP_INT_MIN;
+
+//     INTs  
+
+echo 'PHP_INT_MAX :   ' . PHP_INT_MAX . '<br/>'; //If we add int numbers to this max number, the type of data is gonna become FLOAT
+echo 'PHP_INT_MIN :   ' . PHP_INT_MIN . '<br/>';
 
 //We can also specify the type of data after declaring a variable, and it will always try to convert it to the data type
+//If we declare it is gonna be an integer, and we write 5.98, it's gonna become 5
 
 
+//    FLOATS  --> We can declare them like exponential numbers, and it also works with negatives inversly
+ $x = 1.35e4;
+
+ echo $x . '<br/>';
+
+ echo PHP_FLOAT_MAX . '<br/>'; //If you do this *2 for example; you get INF (infinite, because it can not be represented in php)
+
+ // floor() rounds everything down;  ceil() rounds everything up
+
+//We shouldn't compare directly float numbers, propably getting errors
+
+//Never compare 2 INF numbers; instead you can do -> is_finite()  ; same if you get NaN -> is_nan()
 
 
+//    STRING   -> super similar to JS, we can access the different letters of a string with the index, we can even alter the letters
 
+$fullName = 'William Smith';
 
+var_dump($fullName) . '<br/>';
+//We'll get -> string(13) "William Smith"
 
+echo '<br/>';
 
+// Herdoc  -> here you can have variables
+$text = <<<TEXT
+Line 1 $fullName
+Line 2
+Line 3
+TEXT;
+
+echo nl2br($text);
+
+// Nowdoc
+echo '<br/>';
+
+$text2 = <<<'TEXT'
+Line 1 $fullName
+Line 2
+Line 3
+TEXT;
+
+echo nl2br($text2);
 
 
 //  If the entire code is php, we don't need to close the tag ? > (together without space in the middle)
