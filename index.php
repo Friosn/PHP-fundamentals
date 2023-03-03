@@ -129,7 +129,7 @@ Line 2
 Line 3
 TEXT;
 
-echo nl2br($text);
+echo nl2br($text); //prints in one line each line -> nl2br()
 
 // Nowdoc -> here you can't have variables
 echo '<br/>';
@@ -212,6 +212,27 @@ echo '</pre>';
 //with isset($array['key']) it actually checks the value, so if you would have a value of null, you would get a false === misterious bugs super hard to find :(
 
 
+// ----------------- EXPRESSIONS------  anything that has a value or evaluate as a value (consts, vars ...) anything after =, or ===, etc, whatever evaluates to a boolean, int , float, any type of info
+
+
+//------------------ OPERATORS  -------- very similar than in JS
+
+// Arithmetic ------>  ( + - * / % **)
+    // With fmod() you can operate floating numbers!!!!
+
+// Assignment ------>  ( = += -= *= /= %= **=)
+// String ---------->  ( .  )
+// Comparison ------>  (==  ===  != <>(pretty much same as !=) !== <  >  <=  >=  <=>(0 if both comparisons are equal; if the first is less, -1; if is bigger, 1 )  
+    //            -     ??(null coalescing operator -> mainly used when working with nodes:  $y = $x ?? "It was null"; $y is just this string if $x is null, otherwise it is the value of $x)  ?:(ternary operator))
+// Error Control --->  ( @  (it supresses errors, NOT RECOMENDABLE AT ALL, it jsut silences the app and you will never find a possible bug))
+// Increment/Decrement -->  (++  --   (you can use them before or after a variable, it affects what does happen first; an interesting fact is that if you increment a data type "string", it will increment the last letter in the abecedario))
+// Logical --------->  (&&  ||  !  and (this one might be tricky, it has less preference than equal in cases where you are putting it between different booleans for instance)
+    //                  or  xor)
+// Bitwise --------->  ( &  |  ^  ~  <<   >>)
+// Array ----------->  ( +  ==  ===  !=  <>  !==)
+// Execution ------->  ()
+// Type ------------>  ( instanceof )
+// Nullsafe
 
 
 
