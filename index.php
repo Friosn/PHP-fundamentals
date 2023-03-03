@@ -207,6 +207,9 @@ echo '</pre>';
 
     var_dump((array) $varArr);
 
+//There is also a way to see if a specific key exists in an array -->  var_dump(array_key_exists('key', $array )), 
+
+//with isset($array['key']) it actually checks the value, so if you would have a value of null, you would get a false === misterious bugs super hard to find :(
 
 
 
